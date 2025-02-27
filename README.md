@@ -11,12 +11,12 @@ It features a **RoboBuddy**, an **AI-powered** companion that engages users in *
 </div>
 
 ## 👥 Team Members & Roles
- - **Bucilă Mihai**: 
+ - **[Bucilă Mihai](https://github.com/bucilamihai)**: 
    - **Business**: Project management, business strategy, user acquisition, and stakeholder relations.
    - **Tech**: UI/UX designer responsible for the app’s user interface, focusing on creating an easy-to-use and accessible experience for elderly users.
- - **Călăuz Răzvan**: 
+ - **[Călăuz Răzvan](https://github.com/Razvanix445)**: 
    - **Tech**: Data scientist, developing RoboBuddy’s AI chat and game functionalities, focusing on improving the AI's natural language understanding and creating interactive, entertaining games for the user.
- - **Chelaru Laurențiu**: 
+ - **[Chelaru Laurențiu](https://github.com/Kaensy)**: 
    - **Tech**: Data scientist, focusing on health data processing, analysis and recommendation generation, responsible for developing algorithms to analyze user-entered health metrics (like heart rate, blood sugar, and general wellness) and providing actionable recommendations to support healthy lifestyle choices.
 
 ## 🛠️ Working Environment
