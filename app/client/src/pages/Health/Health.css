@@ -1,0 +1,58 @@
+.center-button {
+    display: block;
+    margin: auto;
+    width: 33%;
+  }
+  
+  /* For input fields */
+  .custom-input {
+    --background: transparent;
+    --border-radius: 15px;
+    --ion-border-color: transparent;
+    --highlight-background: transparent;
+    --highlight-color-focused: transparent;
+    border: 3px solid #c5c5c5;
+    border-radius: 15px;
+    background-color: #eaeaea;
+    box-shadow: none;
+    margin: 0 0 18px 0;
+    padding: 0;
+  }
+  
+  .custom-input ion-input {
+    font-size: 22px;
+    color: #1e1e1e;
+    --padding-start: 5px;
+    background: transparent;
+  }
+  
+  .custom-input ion-select {
+    font-size: 22px;
+    color: #1e1e1e;
+    --padding-start: 5px;
+    background: transparent;
+  }
+  
+  .custom-input ion-input::placeholder {
+    color: #4b4b4b;
+  }
+  
+  .custom-select {
+    font-size: 14px;
+    padding: 4px;
+    width: 150px;
+  }
+  
+  .custom-popover {
+    --width: 150px;
+  }
+  
+  .custom-input ion-datetime {
+    font-size: 22px;
+    color: #1e1e1e;
+    --padding-start: 5px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  

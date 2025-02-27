@@ -1,0 +1,392 @@
+\documentclass[runningheads,a4paper,11pt]{report}
+
+\usepackage{algorithmic}
+\usepackage{algorithm} 
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{comment} 
+\usepackage{epsfig} 
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{geometry} 
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref} 
+\usepackage[latin1]{inputenc}
+\usepackage{multicol}
+\usepackage{multirow} 
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{xcolor}
+
+\geometry{a4paper,top=3cm,left=2cm,right=2cm,bottom=3cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Elderly Care Platform - GoldenMate}
+\fancyhead[L]{GoldenMate Team}
+\fancyfoot[R]{MIRPR 2024-2025}
+\fancyfoot[L]{\thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{lime}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{%
+  \color{lime}\leaders\hrule height \footrulewidth\hfill}}
+\newcommand{\todoL}[1]{{\color{green} TODO: \color{green} \textbf{#1}}}
+
+\hypersetup{
+pdftitle={GoldenMate - Elderly Care Platform},
+pdfauthor={GoldenMate Team},
+pdfkeywords={AI, Elderly Care, Health Monitoring, Conversational AI, Python},
+bookmarksnumbered,
+pdfstartview={FitH},
+urlcolor=cyan,
+colorlinks=true,
+linkcolor=red,
+citecolor=green,
+}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\linespread{1}
+
+\makeindex
+
+\begin{document}
+
+\begin{titlepage}
+\sloppy
+
+\begin{center}
+BABE\c S BOLYAI UNIVERSITY, CLUJ NAPOCA, ROM\^ ANIA
+
+FACULTY OF MATHEMATICS AND COMPUTER SCIENCE
+
+\vspace{6cm}
+
+\Huge \textbf{GoldenMate: An Elderly Care Platform}
+
+\vspace{1cm}
+
+\normalsize -- MIRPR Report --
+
+\end{center}
+
+\vspace{5cm}
+
+\begin{flushright}
+\Large{\textbf{Team Members}}\\
+Bucila Mihai, Calauz Razvan, Chelaru Laurentiu
+\end{flushright}
+
+\vspace{4cm}
+
+\begin{center}
+2024-2025
+\end{center}
+
+\end{titlepage}
+
+\pagenumbering{gobble}
+
+\begin{abstract}
+	GoldenMate is an AI-powered mobile application designed to keep elderly people mentally active and engaged. It features "RoboBuddy," an AI companion that provides conversational engagement, health recommendations, and interactive games. The project leverages machine learning, natural language processing (NLP), and data visualization to support the well-being of elderly users.
+
+	Intelligent methods used include NLP models for conversation, machine learning for health data analysis, and reinforcement learning for games. The app integrates various datasets to provide personalized insights and interactions for users, with features such as reminders, health tracking, and games.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\listoftables
+\listoffigures
+\listofalgorithms
+
+\newpage
+
+\setstretch{1.5}
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\label{chapter:introduction}
+
+\section{What? Why? How?}
+\label{section:what}
+
+The problem addressed by this project is the need for mental and social engagement among elderly people, which can impact their emotional well-being. As people age, they may face increased isolation, cognitive decline, and difficulties managing health metrics. GoldenMate's AI-powered "RoboBuddy" is designed to address these challenges by providing conversation, reminders, health insights, and interactive games.
+
+The project utilizes artificial intelligence (AI) techniques, such as natural language processing (NLP) for conversations and machine learning (ML) for health data analysis. The basic approach involves deploying these models in a mobile application that elderly users can easily access and interact with daily.
+
+This work is relevant as it demonstrates the potential of AI in creating socially and emotionally supportive tools for elderly care.
+
+\section{Paper Structure and Original Contributions}
+\label{section:structure}
+
+This report presents advancements in AI-based applications for elderly care. The primary contributions include:
+\begin{itemize}
+    \item 1. Development of RoboBuddy, an interactive AI-based companion.
+    \item 2. Implementation of health data analysis algorithms for personalized insights.
+    \item 3. Creation of an intuitive and elder-friendly user interface.
+\end{itemize}
+
+The report is structured as follows:
+\begin{itemize}
+    \item - Chapter \ref{chapter:stateOfArt} discusses related work.
+    \item - Chapter \ref{chapter:proposedApproach} details the proposed approach and algorithm design.
+    \item - Chapter \ref{chapter:application} covers the app's description and functionality.
+\end{itemize}
+
+\chapter{Scientific Problem}
+\label{section:scientificProblem}
+
+\section{Problem Definition}
+\label{section:problemDefinition}
+
+The project addresses the problem of providing meaningful, interactive support for elderly individuals through AI-driven conversations and health monitoring. As many elderly people face isolation, RoboBuddy aims to alleviate loneliness while also assisting with health management through friendly interactions and reminders.
+
+The AI chatbot, developed using the BlenderBot model, fine-tuned on a custom dataset, interacts with users to provide tailored responses. 
+
+Inputs to the system include conversational prompts from the user, medical history and daily health data (such as blood pressure, glucose levels, cognitive assessment results). 
+
+The outputs are generated responses suited for conversations with elder people, but also personalized conversational responses that address emotional well-being and reminders for medication, appointments or physical activities.
+
+AI performance is evaluated through the conversational quality, measured by user feedback on response relevance, coherence and empathy determined within sessions and the loneliness improvements due to the ability to play games along the chatbot. The evaluation ensures the system not only supports health monitoring, but also provides meaningful companionship to elderly users.
+
+\chapter{State of the Art/Related Work}
+\label{chapter:stateOfArt}
+
+In recent years, advancements in Artificial Intelligence have demonstrated significant potential in enhancing mental and physical well-being, particularly through conversational AI systems. Models like OpenAI's GPT series and Facebook's BlenderBot have set benchmarks for natural language processing (NLP), enabling human-like interactions that provide companionship and support. These systems have been explored for various applications, including mental health therapy, customer support, and general social interaction.
+
+Despite these advancements, few solutions have been specifically designed with elderly users in mind. The elderly often face unique challenges, such as social isolation, cognitive decline, and a need for accessible interfaces. While generic conversational AI models excel in dialogue generation, they lack domain-specific features that address these particular needs.
+
+Moreover, existing research highlights the growing demand for AI systems that integrate social engagement with health monitoring. For example, some studies have explored AI-driven virtual assistants that remind users to take medication or log physical activity. However, these systems are typically utility-focused and lack the conversational depth needed to establish emotional connections or mitigate loneliness.
+
+Our project builds on this foundation by introducing a comprehensive, elderly-focused AI application that combines conversational engagement with actionable health insights. Unlike existing conversational models, our system integrates health data such as activity tracking, medication schedules, and real-time updates on vitals. It also incorporates gamified cognitive exercises to foster mental stimulation, promoting both social and physical well-being in an easy-to-use format.
+
+This tailored approach fills the gap in existing research and solutions, providing a holistic tool that meets the specific needs of the elderly population.
+
+\chapter{Investigated Approach}
+\label{chapter:proposedApproach}
+
+The proposed approach combines natural language processing (NLP) for conversation, machine learning (ML) for health analysis, and user interface (UI)/user experience (UX) principles for accessibility. We developed RoboBuddy, a Python-based AI companion designed to understand user input and respond empathetically, specifically tailored for elderly users.
+
+\textbf{
+\section{Model Selection and Development Process}
+}
+
+To determine the most suitable conversational model, we evaluated several state-of-the-art NLP models, including OpenAI's GPT-2, DialoGPT, BERT, and Facebook's BlenderBot.
+
+GPT-2 is pre-trained on a large dataset of diverse internet text, uses a transformer-based architecture to generate fluent and contextually relevant text. (Source: https://github.com/openai/gpt-2)
+
+DialoGPT is built on GPT-2, DialoGPT is fine-tuned for conversational data, optimized for generating multi-turn dialogue. (Source: https://github.com/microsoft/DialoGPT)
+
+BERT: While primarily designed for understanding tasks, BERT has been adapted for conversational AI due to its deep bidirectional representations. It is pre-trained on masked language modeling and next-sentence prediction tasks. (Source: https://github.com/google-research/bert)
+
+BlenderBot is a pre-trained on large-scale dialogue dataset sand specializes in empathetic and context-aware conversation generation, with fine-tuning capabilities for custom datasets. (Source: https://huggingface.co/docs/transformers)
+
+BlenderBot emerged as the best approach for several reasons:
+
+\subsection{Conversation Context Management:}
+ BlenderBot demonstrated superior ability to maintain coherent and context-aware conversations over extended dialogues, which is crucial for engaging elderly users. The coherence and the context-awareness was measured using metrics like BLEU scores to evaluate the relevance of generated responses to expected responses. Also, the bot was tested with long conversations, incorporating abrupt topic changes and evaluated on its ability to maintain relevance and logical flow.
+ 
+ A BLEU score example:
+ 
+ - Context: Elderly user asks about health advice related to diabetes.
+ 
+ - User Input: "What should I eat to manage my blood sugar?"
+ 
+ - Model Output: "Eating whole grains, vegetables and lean proteins can help."
+ 
+ The average BLEU Score is 0.82 out of 1.0, demonstrating a relatively strong semantic alignment.
+
+\subsection{Empathetic Responses:}
+ Its pre-trained models excel in generating empathetic and human-like responses, aligning well with the project's goal of reducing loneliness among the elderly.
+ 
+ The level of empathy of the responses is tested by applying a sentiment analysis tool named TextBlob to gauge whether the bot's resposes expressed appropiate levels of positivity, concern or understanding. Also, specific prompts simulating emotional contexts (for example, loneliness, anxiety or frustration) were provided and responses were analyzed qualitatively for emotional depth and appropriateness.
+
+ The TextBlob Sentiment Analysis Results reveals that the responses have a positive and empathetic tone, aligning with the project's goal of reducing loneliness, according to the computed results for Polarity value of +0.35 (positive, showing a comforting tone) and Subjectivity value of 0.75 (high subjectivity, indicating personal and empathetic language). 
+ 
+ An example of emotional context is the following:
+ 
+ - User Input: "I feel so lonely these days. No one visits me anymore."
+ 
+ - Model Output: "I'm so sorry to hear that. You are not alone, and I'm here to talk with you anytime you need."
+ 
+\subsection{Extensibility:}
+ BlenderBot's modular design allowed for the seamless integration of custom datasets and domain-specific fine-tuning, making it adaptable for elderly-centric conversations.
+While GPT-2 and DialoGPT provided high-quality text generation, they lacked conversational coherence over long interactions. Similarly, BERT, being optimized for classification tasks rather than dialogue, was not ideal for this use case.
+
+\textbf{
+\section{Custom Dataset Creation and Preprocessing}
+}
+To further enhance the conversational quality and tailor it to elderly users, we developed a custom dataset by merging and filtering data from multiple open-source conversational datasets (DailyDialog, OpenSubtitles, Persona-Chat, TalkBank, etc.).
+
+DailyDialog: A high-quality multi-turn dialogue dataset containing 13,118 conversations with topics related to daily life and human interactions. It is designed to reflect natural, human-like conversations. (Source: https://huggingface.co/datasets/li2017dailydialog/daily\_dialog)
+
+OpenSubtitles: A large-scale dataset with over 400 million dialogue lines extracted from movie subtitles, providing diverse conversational scenarios. Unfortunately, this dataset has too many dialogue lines that are not suitable for elderly conversations and the formatting lacks professionalism (many wrong-typed words and Case Insensitive). (Source: https://huggingface.co/datasets/Helsinki-NLP/open\_subtitles)
+
+Persona-Chat: A dataset of 162,064 dialogue utterances designed for conversational agents with pre-defined personas, helping create more personalized and engaging interactions. Like the OpenSubtitles dataset, this dataset is Case Insensitive, all the inputs being written lowercase. (Source: https://www.kaggle.com/datasets/atharvjairath/personachat)
+
+TalkBank: A collection of recorded and transcribed conversations, often featuring intergenerational dialogues, including interactions with elderly speakers. The dataset spans multiple languages and contexts. (Source: https://huggingface.co/datasets/talkbank/callhome)
+
+The focus was to ensure relevance to elderly users, covering topics such as health, family, cooking, nature, animals, pets, curiosities, entertainment and 6 more.
+
+\subsection{Filtering Relevant Data:}
+ To tailor the dataset to elderly users, we used AI-powered text classification tools, such as GPT-based classifiers, to identify and prioritize elderly-relevant themes. Here’s an outline of the logic steps performed for filtering:
+
+ 1. Keyword-Based Preprocessing:
+
+Hundreds of keywords such as "grandchildren," "pets," "recipes," "hobbies," "health tips," and "nature" were identified as relevant for elderly-focused conversations.
+Texts containing these keywords or synonyms were flagged as candidates for inclusion.
+
+ 2. Thematic Categorization:
+
+Each conversation or dialogue snippet was assigned a thematic category using a GPT-based classifier fine-tuned on our custom themes.
+Irrelevant categories, such as youth slang or aggressive tones, were filtered out, as much as possible manually.
+
+After filtering all the mentioned datasets, the resulted dataset size was approximatively 7500 utterances, organized along the 14 categories mentioned earlier.
+
+\section{Preprocessing and Postprocessing}
+
+\subsection{Preprocessing User Input:}
+ To improve interaction efficiency, user inputs were preprocessed to handle predefined responses for common interactions, such as greetings ("Good morning! How are you feeling today?"), weather inquiries, and personalized health updates. These predefined responses were dynamically generated based on the user's health data stored in the app.
+\subsection{Postprocessing Model Outputs:}
+ Model responses were refined to align with an accessible, friendly tone suitable for elderly users. For example, technical jargon or overly complex language was avoided. To maintain a consistent and depersonalized tone, the model was restricted from using pronouns like "I" and "me." This adjustment was made to emphasize the AI's role as a supportive tool rather than a sentient entity. For instance, instead of saying, "I think you should rest," the model responds with, "It might be a good idea to rest."
+ 
+\section{Integration of Health Analysis}
+For health analysis capabilities, we implemented two Random Forest Classifier models to predict cardiovascular diseases and diabetes risk levels. These models were developed using scikit-learn and provide probability-based risk assessments.
+
+\subsection{Cardiovascular Disease Prediction}
+The cardiovascular prediction model analyzes various metrics including:
+\begin{itemize}
+    \item Required features: age, gender, height, weight, systolic and diastolic blood pressure
+    \item Optional features: cholesterol levels, glucose levels, smoking status, alcohol consumption, physical activity level
+    \todoL{the model will be built on all these features (required and optional) or by using some of them only?}
+\end{itemize}
+
+The model was trained on the Cardiovascular Disease dataset\cite{cardio_dataset}, consolidating information from two primary sources: the UCI Machine Learning Repository Heart Disease Dataset and Kaggle's Heart Disease Dataset. The dataset contains key cardiovascular health indicators and binary classification for disease presence, achieving metrics of:
+\begin{itemize}
+    \item Accuracy: 0.731
+    \item Precision: 0.755
+    \item Recall: 0.667
+    \item F1 Score: 0.708
+\end{itemize}
+\todoL{please give more details about the training and testing datasets (how many samples, how many features), the hyperparameters for the training stage, if the above metrics are obtained on the training or on the testing dataset; please add the confusion matrix associated to this prediction}
+
+\subsection{Diabetes Prediction}
+The diabetes prediction model considers:
+\begin{itemize}
+    \item Required features: age, gender, BMI, blood glucose level
+    \item Optional features: hypertension, heart disease, smoking history, HbA1c level
+     \todoL{the model will be built on all these features (required and optional) or by using some of them only?}
+\end{itemize}
+
+This model was trained on the Diabetes Prediction dataset\cite{diabetes_dataset}, which contains medical and demographic data from patients along with their diabetes status, achieving performance metrics of:
+\begin{itemize}
+    \item Accuracy: 0.972
+    \item Precision: 1.000
+    \item Recall: 0.674
+    \item F1 Score: 0.805
+\end{itemize}
+\todoL{please give more details about the training and testing datasets (how many samples, how many features), the hyperparameters for the training stage, if the above metrics are obtained on the training or on the testing dataset; please add the confusion matrix associated to this prediction}
+
+\todoL{in what follows you split the computed output into more categories based on the associated probability; how did you transform the predicted probability into a label for the previous two models (cardio prediction and diabetes prediction)? Did you use a threshold? If so, indicate the value of this threshold. Furthermore, you could analyze the influence of this value on the prediction quality}.
+
+Both models provide risk assessments categorized into four levels: Low Risk (probability < 0.2), Moderate Risk (0.2-0.5), High Risk (0.5-0.8), and Very High Risk (> 0.8). These predictions are integrated into the conversation system, allowing RoboBuddy to provide personalized health insights and recommendations based on the user's risk levels. For instance, users with elevated cardiovascular risk might receive suggestions for blood pressure monitoring, while those with diabetes risk factors could get reminders about blood glucose testing.
+
+\subsection{Health Improvement Suggestions}
+
+When a user's health risk level is identified as Moderate Risk (0.2-0.5), High Risk (0.5-0.8), or Very High Risk (> 0.8), the chatbot provides personalized health improvement suggestions. These suggestions aim to guide the user toward reducing their risk level and improving overall well-being.
+
+=======
+
+Both models provide risk assessments categorized into four levels: Low Risk (probability < 0.2), Moderate Risk (0.2-0.5), High Risk (0.5-0.8), and Very High Risk (> 0.8). These predictions are integrated into the conversation system, allowing RoboBuddy to provide personalized health insights and recommendations based on the user's risk levels. For instance, users with elevated cardiovascular risk might receive suggestions for blood pressure monitoring, while those with diabetes risk factors could get reminders about blood glucose testing.
+
+\subsection{Health Improvement Suggestions}
+
+When a user's health risk level is identified as Moderate Risk (0.2-0.5), High Risk (0.5-0.8), or Very High Risk (> 0.8), the chatbot provides personalized health improvement suggestions. These suggestions aim to guide the user toward reducing their risk level and improving overall well-being.
+
+Suggestions are selected based on:
+\begin{itemize}
+    \item Health Profile Data: Age, medical history, and lifestyle factors stored in the application.
+    \item Current Risk Factors: Specific results from cardiovascular or diabetes models.
+\end{itemize}
+
+\section{Sentiment Analysis on User's Message}
+
+\subsection{Overview}
+The sentiment analysis component monitors the user's emotional state during interactions with the chatbot, leveraging the BERT model \textit{bhadresh-savani/bert-base-go-emotion}. This enables real-time classification of messages into several sentiments.
+
+\subsection{Methodology}
+\begin{itemize}
+    \item Message Processing: Each user message, typed or transcribed, is analyzed for sentiment using the BERT model.
+    \todoL{did you use a pre-trained BERT model? If so, please indicate the source of this pretrained model and the dataset used for pre-training}
+
+    \item Sentiment Logging: Sentiment scores are stored for individual messages, enabling trend tracking over time.
+    \todoL{please detail the meaning of this score? How many categories do you have for your sentiments (2 - positive and negative, 3 - pos, neg, neutral, more ?}
+
+    \item Sentiment Logging: Sentiment scores are stored for individual messages, enabling trend tracking over time.
+\end{itemize}
+
+\subsection{Daily Sentiment Tracking}
+\begin{itemize}
+    \item Daily Summary: Sentiment logs are aggregated daily to record the distribution of messages, along with an average sentiment score.
+
+    \item User Monitoring: These records help track long-term emotional trends and provide insights into changes in mental well-being.
+\end{itemize}
+
+\subsection{Overall Sentiment Calculation}
+\begin{itemize}
+    \item Session Analysis: At the end of each chat session (or end of day), sentiment scores are aggregated to calculate an overall sentiment score, summarizing the user's emotional state.
+    \todoL{please give more details about this aggregation step. }
+    \item Alerts and Insights: Negative sentiment trends may trigger system notifications or recommendations to caregivers.
+\end{itemize}
+
+\chapter{Application (Study Case)}
+\label{chapter:application}
+
+\section{App Description and Main Functionalities}
+\label{section:appDescription}
+
+GoldenMate is a mobile app for elderly users featuring RoboBuddy, a conversational AI. Key functionalities include:
+\begin{itemize}
+\item Conversational AI that provides companionship and asks meaningful follow-up questions.
+\item Health monitoring, where users can enter metrics (heart rate, blood sugar) and receive personalized recommendations.
+\item Games like trivia and Sudoku to keep users mentally stimulated.
+\end{itemize}
+
+\section{App Design}
+\label{section:appDesign}
+
+The application consists of various components, such as a conversation interface, health monitoring, and game modules. Use cases and class diagrams are provided in Figures ? and ?.
+
+\section{Implementation}
+\label{section:appImplementation}
+
+The app is built using Ionic React for the frontend and Python (Flask) for the backend. NLP models from Hugging Face and custom ML algorithms were used for the conversational and recommendation systems.
+
+\section{Testing of the Codebase}
+\label{section:appTesting}
+
+TODO
+
+\chapter{Conclusion and Future Work}
+\label{chapter:concl}
+
+GoldenMate demonstrates the potential for AI in elderly care. Our approach, focused on empathetic conversations and health insights, highlights key strengths in accessibility and personalization. Future work will involve expanding the app's games, improving conversational depth, and adding multilingual support.
+
+\bibliographystyle{plain}
+\bibliography{BibAll}
+\url{https://celiatecuida.com/en/home_en/}
+\end{document}

@@ -1,0 +1,54 @@
+html,
+body,
+#root,
+.ion-app,
+.ion-page {
+  height: 100%;
+}
+
+.ion-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.reminder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #a69d95;
+  border-radius: 8px;
+  background-color: #efefef;
+}
+
+.reminder-content h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #4b4b4b;
+}
+
+.reminder-content p {
+  margin: 5px 0;
+  color: #4b4b4b;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a69d95;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button:hover {
+  color: #8c7e75;
+}
+
+.custom-fab {
+  right: 20px;
+}
